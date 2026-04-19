@@ -13,7 +13,7 @@ depends_on = None
 
 def upgrade():
     op.add_column('celestial_events',
-        sa.Column('go_outside', sa.Boolean(), server_default='false', nullable=False))
+        sa.Column('go_outside', sa.Boolean(), server_default='0', nullable=False))
 
 def downgrade():
     op.drop_column('celestial_events', 'go_outside')
